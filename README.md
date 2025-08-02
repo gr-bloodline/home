@@ -2,6 +2,10 @@
 
 Welcome to the official landing page of the **ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ** Free Fire guild — a family bound by loyalty, strength, and unity.
 
+## 🌐 Live Site
+
+🔗 [Visit the Landing Page](https://gr-bloodline.github.io/home/)
+
 ## 🔥 Features
 
 - ⚔️ Animated blood effects for a dramatic visual
@@ -17,17 +21,18 @@ Welcome to the official landing page of the **ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ** 
 ├── index.html
 └── resource/
 ├── favicon.ico
-└── icon.png
+├── icon.png
+└── preview.png
 
 
 ## 📷 Preview
 
-![Preview](resource/icon.png)
+![Preview](resource/preview.png)
 
-## 📎 Links
+## 📎 Useful Links
 
-- 🔗 [Guild Rules](https://gr-bloodline.github.io/rules/)
-- 🧙‍♂️ [Name Generator](https://gr-bloodline.github.io/name-generator/)
+- 📘 [Guild Rules](https://gr-bloodline.github.io/rules/)
+- ✨ [Name Generator](https://gr-bloodline.github.io/name-generator/)
 - 💬 [Join Messenger Group](https://m.me/j/AbZMa7nzto1jC3fQ/)
 
 ---
