@@ -117,28 +117,21 @@ h1 {
   font-weight: 700;
   margin-bottom: 20px;
   text-shadow: 0 3px 10px rgba(0,0,0,0.15);
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid rgba(255,255,255,0.8);
-  animation: typing 3s steps(30, end), blink 0.7s step-end infinite, glitch 0.2s infinite;
+  display: inline-block;
+  animation: flicker 1.5s infinite;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-  100% { border-color: rgba(255,255,255,0.8); }
-}
-
-@keyframes glitch {
-  0%, 100% { text-shadow: 0 3px 10px rgba(0,0,0,0.15); }
-  20% { text-shadow: 2px 0 #f00, -2px 0 #0ff; }
-  40% { text-shadow: -2px 0 #0f0, 2px 0 #f0f; }
-  60% { text-shadow: 1px 0 #ff0, -1px 0 #0ff; }
-  80% { text-shadow: -1px 0 #f00, 1px 0 #0f0; }
+@keyframes flicker {
+  0%, 100% { opacity: 1; text-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+  10% { opacity: 0.8; text-shadow: 0 2px 6px #fff; }
+  20% { opacity: 0.9; text-shadow: 0 3px 12px #f0f; }
+  30% { opacity: 0.85; text-shadow: 0 2px 8px #0ff; }
+  40% { opacity: 0.95; text-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+  50% { opacity: 0.9; text-shadow: 0 2px 6px #fff; }
+  60% { opacity: 0.85; text-shadow: 0 3px 12px #f0f; }
+  70% { opacity: 0.9; text-shadow: 0 2px 8px #0ff; }
+  80% { opacity: 0.95; text-shadow: 0 3px 10px rgba(0,0,0,0.15); }
+  90% { opacity: 0.85; text-shadow: 0 2px 6px #fff; }
 }
 
 .subtitle {
@@ -146,20 +139,16 @@ h1 {
   opacity: 0.85;
   margin-bottom: 40px;
   font-style: italic;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid rgba(255,255,255,0.75);
-  animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+  display: inline-block;
+  animation: flicker-sub 2s infinite;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
-  100% { border-color: rgba(255,255,255,0.75); }
+@keyframes flicker-sub {
+  0%, 100% { opacity: 0.85; text-shadow: none; }
+  20% { opacity: 0.9; text-shadow: 0 1px 3px #fff; }
+  40% { opacity: 0.87; text-shadow: 0 1px 4px #0ff; }
+  60% { opacity: 0.9; text-shadow: 0 1px 3px #f0f; }
+  80% { opacity: 0.85; text-shadow: none; }
 }
 
 .nav-buttons {
