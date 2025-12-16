@@ -113,7 +113,7 @@ body.dark-mode .blood-shadow::after {
 
 /* Layout */
 h1 {
-  font-size: clamp(2.3rem, 5vw, 3rem);
+  font-size: clamp(2rem, 4.5vw, 2.5rem);
   font-weight: 700;
   margin-bottom: 20px;
   text-shadow: 0 3px 10px rgba(0,0,0,0.15);
@@ -124,6 +124,42 @@ h1 {
   opacity: 0.85;
   margin-bottom: 40px;
   font-style: italic;
+  position: relative;
+  color: #fff; /* adjust as needed */
+  animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 #f00, -2px 0 #0ff;
+    opacity: 0.85;
+    transform: translate(0, 0);
+  }
+  20% {
+    text-shadow: -2px 0 #f0f, 2px 0 #0f0;
+    opacity: 0.9;
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    text-shadow: 2px 2px #0ff, -2px -2px #f00;
+    opacity: 0.85;
+    transform: translate(1px, -1px);
+  }
+  60% {
+    text-shadow: -2px 2px #ff0, 2px -2px #0ff;
+    opacity: 0.9;
+    transform: translate(-1px, 0);
+  }
+  80% {
+    text-shadow: 2px -2px #f0f, -2px 2px #0f0;
+    opacity: 0.85;
+    transform: translate(1px, 1px);
+  }
+  100% {
+    text-shadow: 2px 0 #f00, -2px 0 #0ff;
+    opacity: 0.85;
+    transform: translate(0, 0);
+  }
 }
 
 .nav-buttons {
