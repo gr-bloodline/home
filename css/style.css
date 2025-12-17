@@ -118,39 +118,51 @@ h1 {
   margin-bottom: 20px;
   display: inline-block;
   
-  /* Gradient text with animation */
-  background: linear-gradient(90deg, #667eea, #764ba2, #667eea);
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
+  /* Clean shadow and transition */
+  color: #2d3748;
+  transition: all 0.3s ease;
   
-  animation: gradientShift 8s ease infinite;
+  /* Subtle entrance animation */
+  animation: slideIn 0.8s ease-out;
   position: relative;
+  overflow: hidden;
 }
 
-h1::before {
-  content: attr(data-text);
+h1::after {
+  content: '';
   position: absolute;
+  bottom: 0;
   left: 0;
-  top: 0;
-  z-index: -1;
-  background: linear-gradient(90deg, #667eea, #764ba2);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: blur(8px);
-  opacity: 0.7;
-  animation: gradientShift 8s ease infinite reverse;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    rgba(59, 130, 246, 0) 0%, 
+    rgba(59, 130, 246, 0.8) 50%, 
+    rgba(59, 130, 246, 0) 100%);
+  transform: translateX(-100%);
+  animation: slideUnderline 2s ease-in-out infinite;
 }
 
-@keyframes gradientShift {
-  0%, 100% {
-    background-position: 0% center;
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUnderline {
+  0% {
+    transform: translateX(-100%);
   }
   50% {
-    background-position: 100% center;
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 
@@ -159,28 +171,25 @@ h1::before {
   margin-bottom: 40px;
   font-style: italic;
   display: inline-block;
-  opacity: 0.85;
+  color: #718096;
   
-  /* Underline animation */
-  position: relative;
-  padding-bottom: 5px;
+  /* Typewriter effect */
+  overflow: hidden;
+  border-right: 2px solid #cbd5e0;
+  white-space: nowrap;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
 }
 
-.subtitle::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.5), transparent);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.6s ease;
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-.subtitle:hover::after {
-  transform: scaleX(1);
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #cbd5e0; }
 }
 
 .nav-buttons {
