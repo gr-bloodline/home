@@ -113,42 +113,82 @@ body.dark-mode .blood-shadow::after {
 
 /* Layout */
 h1 {
+  h1 {
   font-size: clamp(2rem, 4.5vw, 2.5rem);
   font-weight: 700;
   margin-bottom: 20px;
-  text-shadow: 0 3px 10px rgba(0,0,0,0.15);
   display: inline-block;
-  animation: flicker 1.5s infinite;
+  
+  /* Soft shadow and transition */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Subtle fade-in animation */
+  animation: softFadeIn 1.2s ease-out;
+  position: relative;
 }
 
-@keyframes flicker {
-  0%, 100% { opacity: 1; text-shadow: 0 3px 10px rgba(0,0,0,0.15); }
-  10% { opacity: 0.8; text-shadow: 0 2px 6px #fff; }
-  20% { opacity: 0.9; text-shadow: 0 3px 12px #f0f; }
-  30% { opacity: 0.85; text-shadow: 0 2px 8px #0ff; }
-  40% { opacity: 0.95; text-shadow: 0 3px 10px rgba(0,0,0,0.15); }
-  50% { opacity: 0.9; text-shadow: 0 2px 6px #fff; }
-  60% { opacity: 0.85; text-shadow: 0 3px 12px #f0f; }
-  70% { opacity: 0.9; text-shadow: 0 2px 8px #0ff; }
-  80% { opacity: 0.95; text-shadow: 0 3px 10px rgba(0,0,0,0.15); }
-  90% { opacity: 0.85; text-shadow: 0 2px 6px #fff; }
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #4f46e5, #06b6d4);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h1:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+h1:hover::after {
+  width: 100%;
+}
+
+@keyframes softFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subtitle {
   font-size: 1.15rem;
-  opacity: 0.85;
+  opacity: 0;
   margin-bottom: 40px;
   font-style: italic;
   display: inline-block;
-  animation: flicker-sub 2s infinite;
+  
+  /* Staggered fade-in */
+  animation: subtitleFadeIn 1s ease-out 0.5s forwards;
+  
+  /* Hover effect */
+  transition: all 0.3s ease;
+  position: relative;
+  padding-bottom: 3px;
 }
 
-@keyframes flicker-sub {
-  0%, 100% { opacity: 0.85; text-shadow: none; }
-  20% { opacity: 0.9; text-shadow: 0 1px 3px #fff; }
-  40% { opacity: 0.87; text-shadow: 0 1px 4px #0ff; }
-  60% { opacity: 0.9; text-shadow: 0 1px 3px #f0f; }
-  80% { opacity: 0.85; text-shadow: none; }
+.subtitle:hover {
+  opacity: 1;
+  letter-spacing: 0.5px;
+}
+
+@keyframes subtitleFadeIn {
+  to {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
 }
 
 .nav-buttons {
