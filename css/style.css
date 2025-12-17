@@ -214,9 +214,8 @@ h1::after {
   to {
     opacity: 0.85;
     transform: translateY(0);
-  }
-}
-
+ }
+  
 .nav-buttons a {
   width: 220px;
   padding: 16px 20px;
