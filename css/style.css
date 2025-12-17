@@ -113,7 +113,6 @@ body.dark-mode .blood-shadow::after {
 
 /* Layout */
 h1 {
-  h1 {
   font-size: clamp(2rem, 4.5vw, 2.5rem);
   font-weight: 700;
   margin-bottom: 20px;
