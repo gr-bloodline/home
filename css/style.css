@@ -116,7 +116,10 @@ h1 {
   font-size: clamp(2rem, 4.5vw, 2.5rem);
   font-weight: 700;
   margin-bottom: 20px;
-  display: inline-block;
+  
+  /* Align left */
+  display: block;
+  text-align: left;
   
   /* Clean shadow and transition */
   color: #2d3748;
@@ -170,33 +173,44 @@ h1::after {
   font-size: 1.15rem;
   margin-bottom: 40px;
   font-style: italic;
-  display: inline-block;
+  
+  /* Align right */
+  display: block;
+  text-align: right;
+  
+  /* Color */
   color: #718096;
   
-  /* Typewriter effect */
+  /* Typewriter effect WITHOUT cursor */
   overflow: hidden;
-  border-right: 2px solid #cbd5e0;
   white-space: nowrap;
+  animation: typing 3.5s steps(40, end);
+  
+  /* Optional: Add right padding for better alignment */
+  padding-right: 10px;
+  
+  /* Optional: Fade in after typing */
+  opacity: 0;
   animation: 
     typing 3.5s steps(40, end),
-    blink-caret 0.75s step-end infinite;
+    fadeIn 0.5s 3s forwards;
 }
 
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from { 
+    width: 0;
+    opacity: 0;
+  }
+  to { 
+    width: 100%;
+    opacity: 0.85;
+  }
 }
 
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: #cbd5e0; }
-}
-
-.nav-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 22px;
-  flex-wrap: wrap;
+@keyframes fadeIn {
+  to {
+    opacity: 0.85;
+  }
 }
 
 .nav-buttons a {
