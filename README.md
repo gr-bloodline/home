@@ -28,9 +28,15 @@ Welcome to the official landing page of the **ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ** 
 
 ```
 ├── index.html
+├── README.md
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
 └── resource/
     ├── favicon.ico
     ├── icon.png
+    ├── OG-image.png
     └── preview.png
 ```
 
