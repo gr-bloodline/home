@@ -1,6 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
+  const brandTitle = document.getElementById("brandTitle");
+
+brandTitle.addEventListener("click", () => {
+  location.reload();
+});
+
   const lightIcon = document.getElementById("lightMode");
   const darkIcon = document.getElementById("darkMode");
   const messengerIcon = document.getElementById("messengerLink");
@@ -8,68 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nameGeneratorLink = document.getElementById("nameGeneratorLink");
   const copyCreator = document.getElementById("copyCreator");
   const creatorName = document.querySelector(".creator-name");
-  
-  /* -------------------------
-     SUBTITLE TEXT ROTATOR
-  ------------------------- */
-  const subtitleLines = document.querySelectorAll('.subtitle-line');
-  let currentLine = 0;
-  let subtitleInterval;
-  
-  function rotateSubtitles() {
-    if (subtitleLines.length === 0) return;
-    
-    // Remove active class from all lines
-    subtitleLines.forEach(line => {
-      line.classList.remove('active');
-      line.style.opacity = '0';
-    });
-    
-    // Add active class to current line
-    subtitleLines[currentLine].classList.add('active');
-    subtitleLines[currentLine].style.opacity = '0.85';
-    
-    // Add a subtle glitch effect during transition
-    subtitleLines[currentLine].style.animation = 'none';
-    setTimeout(() => {
-      subtitleLines[currentLine].style.animation = '';
-    }, 10);
-    
-    // Move to next line
-    currentLine = (currentLine + 1) % subtitleLines.length;
-  }
-  
-  function startSubtitleRotation() {
-    // Clear any existing interval
-    if (subtitleInterval) {
-      clearInterval(subtitleInterval);
-    }
-    
-    // Start rotation (every 5 seconds)
-    subtitleInterval = setInterval(rotateSubtitles, 5000);
-    
-    // Initial activation (show first line)
-    if (subtitleLines.length > 0) {
-      subtitleLines[0].classList.add('active');
-      subtitleLines[0].style.opacity = '0.85';
-      currentLine = 1; // Set to next line for first rotation
-    }
-  }
-  
-  // Pause rotation on hover
-  const subtitleContainer = document.querySelector('.subtitle-container');
-  if (subtitleContainer) {
-    subtitleContainer.addEventListener('mouseenter', () => {
-      if (subtitleInterval) {
-        clearInterval(subtitleInterval);
-      }
-    });
-    
-    subtitleContainer.addEventListener('mouseleave', () => {
-      startSubtitleRotation();
-    });
-  }
-  
+
   /* -------------------------
      COPY CREATOR ID
   ------------------------- */
@@ -128,14 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     window.location.href = "https://gr-bloodline.github.io/name-generator/";
   });
-
-  /* -------------------------
-     INITIALIZE SUBTITLE ROTATOR
-  ------------------------- */
-  // Start subtitle rotation after a short delay
-  setTimeout(() => {
-    startSubtitleRotation();
-  }, 1000);
 
   /* -------------------------
      PROTECTION
