@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
+  // Dynamic copyright year
+  document.querySelector('.copyright').innerHTML = `© ${new Date().getFullYear()} бі≥біњгГ° Щ ЯбіПбіПбіЕ Я…™…ібіЗ. All rights reserved.`;
+
   const brandTitle = document.getElementById("brandTitle");
 
 brandTitle.addEventListener("click", () => {
