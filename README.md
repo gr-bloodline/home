@@ -58,4 +58,4 @@ Welcome to the official landing page of the **ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ** 
 
 **“Blood makes us related — Loyalty makes us family.”**
 
-© 2025 ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ ∞ | Crafted with loyalty ♥ by ᴳᴿᴮメʟᴏᴠᴇʀღ
+© ᴳᴿメʙʟᴏᴏᴅʟɪɴᴇ ∞ | Crafted with loyalty ♥ by ᴳᴿᴮメʟᴏᴠᴇʀღ
